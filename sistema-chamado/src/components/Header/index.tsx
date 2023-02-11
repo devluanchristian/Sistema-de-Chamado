@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
 import avatarImg from "../../assets/avatar.png";
@@ -10,6 +10,7 @@ import { IAuthContext } from "../../contexts/Interface";
 
 const Header = () => {
   const { user }: IAuthContext = useContext(AuthContext);
+  const [nome, setNome] = useState(user && user.nome)
   return (
     <div className="sidebar">
       <div>
@@ -18,7 +19,7 @@ const Header = () => {
           alt="Foto do usuario"
         />
       </div>
-
+      <p>{nome}</p>
       <Link to={"/dashboard"}>
         <AiOutlineHome color="#FFF" size={24} />
         Tickets
