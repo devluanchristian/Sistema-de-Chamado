@@ -38,8 +38,10 @@ const Profile = () => {
 
   const handleUpload = async () => {
     const currentUid = user.uid;
-    const uploadRef = ref(storage, `images/${currentUid}/${imageAvatar?.name}`);
+    //@ts-ignore
 
+    const uploadRef = ref(storage, `images/${currentUid}/${imageAvatar?.name}`);
+    //@ts-ignore
     const uploadTask = uploadBytes(uploadRef, imageAvatar).then((snapshot) => {
       getDownloadURL(snapshot.ref).then(async (dowloadURL) => {
         let urlFoto = dowloadURL;

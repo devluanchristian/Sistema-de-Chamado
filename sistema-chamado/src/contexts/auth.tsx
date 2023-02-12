@@ -37,7 +37,7 @@ function AuthProvider({ children }: IAuthProvider) {
     loadUser();
   }, []);
 
-  //logar um user no sistema 
+  //logar um user no sistema
   async function signIn(email: string, password: string) {
     setLoadingAuth(true);
 

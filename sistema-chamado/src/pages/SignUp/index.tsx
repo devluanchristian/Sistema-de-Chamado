@@ -2,7 +2,7 @@ import "./styles.css";
 import logo from "../../assets/logoxx.png";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext} from "../../contexts/auth";
+import { AuthContext } from "../../contexts/auth";
 import { IAuthContext } from "../../contexts/Interface";
 
 const SignUp = () => {
@@ -43,13 +43,17 @@ const SignUp = () => {
           />
           <input
             type="password"
-            placeholder="Senha"
+            placeholder="Senha deve conter no mínimo 6 caracteres"
             value={password}
+            minLength={6}
             onChange={(e) => setPassword(e.target.value)}
           />
           <button type="submit">
             {loadingAuth ? (
-              <img src="https://media.tenor.com/VS20soWAM9AAAAAi/loading.gif"></img>
+              <img
+                className="loandigImg"
+                src="https://i.pinimg.com/originals/49/23/29/492329d446c422b0483677d0318ab4fa.gif"
+              ></img>
             ) : (
               "Cadastrar"
             )}

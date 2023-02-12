@@ -213,6 +213,7 @@ const Dashboard = () => {
       </div>
       {showPostModal && (
         <Modal
+        //@ts-ignore
           conteudo={detail}
           close={() => setShowPostModal(!showPostModal)}
         />
